@@ -20,14 +20,14 @@ public class Controller {
         return "Hello, Welcome to Market Data Service";
     }
 
-    @GetMapping("/stocksData")
+    @GetMapping("/stocksdata")
     public List<StockData> getStocksData(){
         String url = "https://exchange2.matraining.com/md";
         List<StockData> stocks = restTemplate.getForObject(url, List.class);
         return stocks;
     }
 
-    @GetMapping("/stocksData/{ticker}")
+    @GetMapping("/stocksdata/{ticker}")
     public StockData getStockDataForTicker(@PathVariable String ticker) {
         String url = "https://exchange2.matraining.com/md/" + ticker;
         StockData stockData = restTemplate.getForObject(url, StockData.class);
