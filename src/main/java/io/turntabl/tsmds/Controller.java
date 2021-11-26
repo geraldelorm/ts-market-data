@@ -8,6 +8,6 @@ public class Controller {
 
     @GetMapping
     public String home(){
-        return "Hello, Welcome Home";
+        return "Hello, Welcome to Market Data Service";
     }
 }
