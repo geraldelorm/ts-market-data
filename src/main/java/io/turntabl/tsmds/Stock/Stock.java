@@ -19,6 +19,12 @@ public class Stock {
     @JsonProperty("BID_PRICE")
     private float bidPrice;
 
+    @JsonProperty("ASK_PRICE")
+    private float askPrice;
+
+    @JsonProperty("LAST_TRADED_PRICE")
+    private float lastTradedPrice;
+
     public String getTicker() {
         return ticker;
     }
@@ -58,12 +64,6 @@ public class Stock {
     public void setLastTradedPrice(float lastTradedPrice) {
         this.lastTradedPrice = lastTradedPrice;
     }
-
-    @JsonProperty("ASK_PRICE")
-    private float askPrice;
-
-    @JsonProperty("LAST_TRADED_PRICE")
-    private float lastTradedPrice;
 
     public int getBuyLimit() {
         return buyLimit;
