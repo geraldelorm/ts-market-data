@@ -9,13 +9,13 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 public class TsMdsApplication {
 
-	@Bean
-	public RestTemplate restTemplate(RestTemplateBuilder builder) {
-		return builder.build();
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(TsMdsApplication.class, args);
+    }
 
-	public static void main(String[] args) {
-		SpringApplication.run(TsMdsApplication.class, args);
-	}
+    @Bean
+    public RestTemplate restTemplate(RestTemplateBuilder builder) {
+        return builder.build();
+    }
 
 }

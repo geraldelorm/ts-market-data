@@ -1,4 +1,4 @@
-package io.turntabl.tsmds.Stock;
+package io.turntabl.tsmds.MarketData;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

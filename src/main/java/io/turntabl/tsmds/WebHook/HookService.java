@@ -1,20 +1,19 @@
 package io.turntabl.tsmds.WebHook;
 
-import io.turntabl.tsmds.Stock.Stock;
+import io.turntabl.tsmds.MarketData.Stock;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class HookService {
+    List<Stock> marketDataFromExchange;
 
-    List<Stock> marketData;
-
-    public List<Stock> getMarketData() {
-        return marketData;
+    public List<Stock> getMarketDataFromExchange() {
+        return marketDataFromExchange;
     }
 
-    public void setMarketData(List<Stock> marketData) {
-        this.marketData = marketData;
+    public void setMarketDataFromExchange(List<Stock> marketDataFromExchange) {
+        this.marketDataFromExchange = marketDataFromExchange;
     }
 }
