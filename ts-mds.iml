@@ -77,6 +77,10 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.3.13" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-oxm:5.3.13" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context-support:5.3.13" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.18.20" level="project" />
+    <orderEntry type="library" name="Maven: redis.clients:jedis:3.7.0" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.32" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-pool2:2.11.1" level="project" />
     <orderEntry type="library" name="Maven: io.lettuce:lettuce-core:6.1.5.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-common:4.1.70.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-handler:4.1.70.Final" level="project" />
@@ -86,9 +90,5 @@
     <orderEntry type="library" name="Maven: io.netty:netty-transport:4.1.70.Final" level="project" />
     <orderEntry type="library" name="Maven: io.projectreactor:reactor-core:3.4.12" level="project" />
     <orderEntry type="library" name="Maven: org.reactivestreams:reactive-streams:1.0.3" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: org.projectlombok:lombok:1.18.20" level="project" />
-    <orderEntry type="library" name="Maven: redis.clients:jedis:3.7.0" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.32" level="project" />
-    <orderEntry type="library" name="Maven: org.apache.commons:commons-pool2:2.11.1" level="project" />
   </component>
 </module>
