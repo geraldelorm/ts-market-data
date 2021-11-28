@@ -1,27 +1,23 @@
 package io.turntabl.tsmds.WebHook;
 
-import io.turntabl.tsmds.Stock.Stock;
+import io.turntabl.tsmds.MarketData.Stock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/webhook")
 public class HookController {
-
-    @Autowired
-    private RestTemplate restTemplate;
 
     @Autowired
     HookService hookService;
 
-    @PostMapping("/webhook")
-    public void setStockDataFromWebHook(@RequestBody List<Stock> stockDataFromWebHook) {
-//        List<Stock> stocksData = restTemplate.getForObject(stockDataFromWebHook, List.class);
-
-        hookService.setMarketData(stockDataFromWebHook);
+    @PostMapping("/md")
+    public void setMarketDataFromExchange(@RequestBody List<Stock> marketDataFromExchange) {
+        hookService.setMarketDataFromExchange(marketDataFromExchange);
     }
 }
