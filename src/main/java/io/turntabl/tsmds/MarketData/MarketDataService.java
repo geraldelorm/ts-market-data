@@ -14,20 +14,39 @@ public class MarketDataService {
 
     List<MarketData> marketData;
 
+    List<MarketData> marketData2;
+
     public List<MarketData> getMarketData() {
         if (marketData == null) {
-            this.marketData = restTemplate.getForObject("https://exchange2.matraining.com/md", List.class);
+            this.marketData = restTemplate.getForObject("https://exchange.matraining.com/md", List.class);
         }
 
         return marketData;
     }
 
-    public String getStockData(String ticker) {
+    public List<MarketData> getMarketData2() {
+        if (marketData2 == null) {
+            this.marketData2 = restTemplate.getForObject("https://exchange2.matraining.com/md", List.class);
+        }
+
+        return marketData2;
+    }
+
+    public String getMarketDataForTicker(String ticker) {
+        //fix to return stock
+        return ticker + ": Not Found";
+    }
+
+    public String getMarketData2ForTicker(String ticker) {
         //fix to return stock
         return ticker + ": Not Found";
     }
 
     public void updateMarketData(List<MarketData> marketDataFromExchange) {
         this.marketData = marketDataFromExchange;
+    }
+
+    public void updateMarketData2(List<MarketData> marketDataFromExchange) {
+        this.marketData2 = marketDataFromExchange;
     }
 }

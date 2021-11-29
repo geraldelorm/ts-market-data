@@ -19,4 +19,10 @@ public class Webhook {
         marketDataService.updateMarketData(marketDataFromExchange);
         return "data submitted";
     }
+
+    @PostMapping("/md2")
+    public String setMarketDataFromExchange2(@RequestBody List<MarketData> marketDataFromExchange) {
+        marketDataService.updateMarketData2(marketDataFromExchange);
+        return "data submitted";
+    }
 }

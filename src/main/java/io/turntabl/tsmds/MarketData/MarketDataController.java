@@ -16,13 +16,24 @@ public class MarketDataController {
         return "Hello, Welcome to Market Data Service";
     }
 
-    @GetMapping("/stocks")
-    public List<MarketData> getStocksData() {
+    @GetMapping("/md")
+    public List<MarketData> getMarketData() {
         return marketDataService.getMarketData();
     }
 
-    @GetMapping("/stocks/{ticker}")
-    public String getStockDataForTicker(@PathVariable String ticker) {
-        return marketDataService.getStockData(ticker);
+    @GetMapping("/md2")
+    public List<MarketData> getMarketData2() {
+        return marketDataService.getMarketData2();
     }
+
+    @GetMapping("/md/{ticker}")
+    public String getMarketDataForTicker(@PathVariable String ticker) {
+        return marketDataService.getMarketDataForTicker(ticker);
+    }
+
+    @GetMapping("/md2/{ticker}")
+    public String getMarketData2ForTicker(@PathVariable String ticker) {
+        return marketDataService.getMarketData2ForTicker(ticker);
+    }
+
 }
