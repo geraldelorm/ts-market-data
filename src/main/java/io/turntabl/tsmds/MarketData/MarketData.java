@@ -2,7 +2,7 @@ package io.turntabl.tsmds.MarketData;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Stock {
+public class MarketData {
 
     @JsonProperty("BUY_LIMIT")
     private int buyLimit;
