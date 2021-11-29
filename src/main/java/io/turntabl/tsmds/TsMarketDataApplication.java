@@ -7,10 +7,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-public class TsMdsApplication {
+public class TsMarketDataApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TsMdsApplication.class, args);
+        SpringApplication.run(TsMarketDataApplication.class, args);
     }
 
     @Bean
