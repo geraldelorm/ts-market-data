@@ -27,7 +27,6 @@ public class HookController {
     @PostMapping("/md")
     public void setMarketDataFromExchange(@RequestBody List<Stock> marketDataFromExchange) {
         redisTemplate.convertAndSend(channelTopic.getTopic(), marketDataFromExchange.toString());
-
         hookService.setMarketDataFromExchange(marketDataFromExchange);
     }
 }
