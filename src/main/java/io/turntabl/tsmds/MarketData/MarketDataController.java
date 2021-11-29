@@ -1,9 +1,7 @@
 package io.turntabl.tsmds.MarketData;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,7 +17,7 @@ public class MarketDataController {
     }
 
     @GetMapping("/stocks")
-    public List<Stock> getStocksData() {
+    public List<MarketData> getStocksData() {
         return marketDataService.getMarketData();
     }
 
