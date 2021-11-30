@@ -17,5 +17,4 @@ public class TsMarketDataApplication {
     public RestTemplate restTemplate(RestTemplateBuilder builder) {
         return builder.build();
     }
-
 }
