@@ -1,4 +1,4 @@
-package io.turntabl.tsmds.RedisConfig;
+package io.turntabl.tsmds.MarketData.RedisPub;
 
 
 import org.springframework.context.annotation.Bean;
@@ -10,7 +10,7 @@ import org.springframework.data.redis.listener.ChannelTopic;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 
 @Configuration
-public class RedisConfigurationProducer {
+public class RedisPubConfiguration {
     @Bean
     public JedisConnectionFactory jedisConnectionFactory() {
         RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration();
