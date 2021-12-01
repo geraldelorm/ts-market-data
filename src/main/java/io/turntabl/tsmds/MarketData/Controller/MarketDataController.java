@@ -27,14 +27,18 @@ public class MarketDataController {
 //      String webhookUrl1 = "https://" +  InetAddress.getLocalHost().getHostAddress() + "/webhook/md";
 //      String webhookUrl2 = "https://" +  InetAddress.getLocalHost().getHostAddress() + "/webhook/md2";
 //    }
-
-    @GetMapping
-    public String printHost() throws UnknownHostException {
-        String webhookUrl1 = "https://" +  InetAddress.getLocalHost().getHostAddress() + "/webhook/md";
-        String webhookUrl2 = "https://" +  InetAddress.getLocalHost().getHostAddress() + "/webhook/md2";
-
-        return webhookUrl1 + " and " + webhookUrl2;
-    }
+//
+//    @GetMapping
+//    public String printHost() throws UnknownHostException {
+//        String webhookUrl1 = "https://" +  InetAddress.getLocalHost().getHostAddress() + "/webhook/md";
+//        String webhookUrl2 = "https://" +  InetAddress.getLocalHost().getHostAddress() + "/webhook/md2";
+//
+//        return webhookUrl1 + " and " + webhookUrl2;
+//    }
+//    @GetMapping("/webhook/md")
+//    public String demo(@RequestBody List<MarketData> marketDataFromExchange) {
+//        return "Data from exchange1 sent";
+//    }
 
     @PostMapping("/webhook/md")
     public String setMarketDataFromExchange(@RequestBody List<MarketData> marketDataFromExchange) {
