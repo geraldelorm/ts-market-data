@@ -1,5 +1,4 @@
-package io.turntabl.tsmds.MarketData.RedisPub;
-
+package io.turntabl.tsmds.MarketData.Configurations;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
