@@ -15,9 +15,9 @@ import java.util.List;
 public class MarketDataController {
     @Autowired
     MarketDataService marketDataService;
-
-    @Autowired
-    RestTemplate restTemplate;
+//
+//    @Autowired
+//    RestTemplate restTemplate;
 
 
     //Subscribe for market Data
@@ -27,13 +27,14 @@ public class MarketDataController {
 //      String webhookUrl1 = "https://" +  InetAddress.getLocalHost().getHostAddress() + "/webhook/md";
 //      String webhookUrl2 = "https://" +  InetAddress.getLocalHost().getHostAddress() + "/webhook/md2";
 //    }
-//
-//    @GetMapping
-//    public String printHost() throws UnknownHostException {
-//        String webhookUrl1 = "https://" +  InetAddress.getLocalHost().getHostAddress() + "/webhook/md";
-//        String webhookUrl2 = "https://" +  InetAddress.getLocalHost().getHostAddress() + "/webhook/md2";
-//        return webhookUrl1 + "and" + webhookUrl2;
-//    }
+
+    @GetMapping
+    public String printHost() throws UnknownHostException {
+        String webhookUrl1 = "https://" +  InetAddress.getLocalHost().getHostAddress() + "/webhook/md";
+        String webhookUrl2 = "https://" +  InetAddress.getLocalHost().getHostAddress() + "/webhook/md2";
+
+        return webhookUrl1 + " and " + webhookUrl2;
+    }
 
     @PostMapping("/webhook/md")
     public String setMarketDataFromExchange(@RequestBody List<MarketData> marketDataFromExchange) {
