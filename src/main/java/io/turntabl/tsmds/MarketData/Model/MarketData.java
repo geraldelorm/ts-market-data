@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class MarketData {
 
-    @JsonProperty("BUY_LIMIT")
     private int buyLimit;
 
     @JsonProperty("SELL_LIMIT")
@@ -79,5 +78,18 @@ public class MarketData {
 
     public void setSellLimit(int sellLimit) {
         this.sellLimit = sellLimit;
+    }
+
+    @Override
+    public String toString() {
+        return "MarketData{" +
+                "buyLimit=" + buyLimit +
+                ", sellLimit=" + sellLimit +
+                ", ticker='" + ticker + '\'' +
+                ", maxPriceShift=" + maxPriceShift +
+                ", bidPrice=" + bidPrice +
+                ", askPrice=" + askPrice +
+                ", lastTradedPrice=" + lastTradedPrice +
+                '}';
     }
 }
