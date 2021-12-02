@@ -16,11 +16,12 @@ public class MarketDataController {
     @Autowired
     MarketDataService marketDataService;
 
-//    @Autowired
-//    RestTemplate restTemplate;
+    @Autowired
+    RestTemplate restTemplate;
 
 
-    //Subscribe for market Data
+    //TODO
+    //Subscribe for market Data Automaticallly
 //    @PostConstruct
 //    public void subscribeForMarketData() throws UnknownHostException {
 ////        restTemplate.postForObject()
@@ -39,9 +40,6 @@ public class MarketDataController {
 //    public String demo(@RequestBody List<MarketData> marketDataFromExchange) {
 //        return "Data from exchange1 sent";
 //    }
-//
-    @Autowired
-    RestTemplate restTemplate;
 
     // Sending initial MarketData
     @PostConstruct
