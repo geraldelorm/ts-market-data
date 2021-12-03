@@ -45,19 +45,19 @@ public class MarketDataController {
         ArrayList initialMarketDataFromExchange1 = restTemplate.getForObject("https://exchange.matraining.com/md", ArrayList.class);
         ArrayList initialMarketDataFromExchange2 = restTemplate.getForObject("https://exchange2.matraining.com/md", ArrayList.class);
 
-        marketDataService.sendMessage(initialMarketDataFromExchange1);
-        marketDataService.sendMessage(initialMarketDataFromExchange2);
+        marketDataService.sendMessageFromExchangeOne(initialMarketDataFromExchange1);
+        marketDataService.sendMessageFromExchangeTwo(initialMarketDataFromExchange2);
     }
 
     @PostMapping("/webhook/md")
     public String setMarketDataFromExchange(@RequestBody List<Product> productFromExchange) {
-        marketDataService.sendMessage(productFromExchange);
+        marketDataService.sendMessageFromExchangeOne(productFromExchange);
         return "Data from exchange1 sent";
     }
 
     @PostMapping("/webhook/md2")
     public String setMarketDataFromExchange2(@RequestBody List<Product> productFromExchange2) {
-        marketDataService.sendMessage(productFromExchange2);
+        marketDataService.sendMessageFromExchangeTwo(productFromExchange2);
         return "Data from exchange2 sent";
     }
 }

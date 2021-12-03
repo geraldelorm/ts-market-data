@@ -2,6 +2,7 @@ package io.turntabl.tsmds.Services;
 
 import io.turntabl.tsmds.Model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.listener.ChannelTopic;
 import org.springframework.stereotype.Service;
@@ -15,10 +16,19 @@ public class MarketDataService {
     private RedisTemplate redisTemplate;
 
     @Autowired
-    private ChannelTopic channelTopic;
+    @Qualifier("marketDataFromExOne")
+    private ChannelTopic marketDataFromExOne;
 
-    public void sendMessage(List<Product> marketDataFromExchange) {
-        redisTemplate.convertAndSend(channelTopic.getTopic(), marketDataFromExchange);
+    @Autowired
+    @Qualifier("marketDataFromExTwo")
+    private ChannelTopic marketDataFromExTwo;
+
+    public void sendMessageFromExchangeOne(List<Product> marketDataFromExchange) {
+        redisTemplate.convertAndSend(marketDataFromExOne.getTopic(), marketDataFromExchange);
+    }
+
+    public void sendMessageFromExchangeTwo(List<Product> marketDataFromExchange) {
+        redisTemplate.convertAndSend(marketDataFromExTwo.getTopic(), marketDataFromExchange);
     }
 
 }
