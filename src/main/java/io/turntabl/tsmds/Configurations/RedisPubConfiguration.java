@@ -27,8 +27,13 @@ public class RedisPubConfiguration {
     }
 
     @Bean
-    public ChannelTopic channelTopic() {
-        return new ChannelTopic("MarketDataChannel");
+    public ChannelTopic marketDataFromExOne() {
+        return new ChannelTopic("marketDataFromExOne");
+    }
+
+    @Bean
+    public ChannelTopic marketDataFromExTwo(){
+        return new ChannelTopic("marketDataFromExTwo");
     }
 
     @Bean
