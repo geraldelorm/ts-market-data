@@ -1,6 +1,6 @@
-package io.turntabl.tsmds.MarketData.Services;
+package io.turntabl.tsmds.Services;
 
-import io.turntabl.tsmds.MarketData.Model.Product;
+import io.turntabl.tsmds.Model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.listener.ChannelTopic;

@@ -1,4 +1,4 @@
-package io.turntabl.tsmds.MarketData.Model;
+package io.turntabl.tsmds.Model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

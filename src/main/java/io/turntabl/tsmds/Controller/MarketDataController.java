@@ -1,10 +1,9 @@
-package io.turntabl.tsmds.MarketData.Controller;
+package io.turntabl.tsmds.Controller;
 
-import io.turntabl.tsmds.MarketData.Services.MarketDataService;
-import io.turntabl.tsmds.MarketData.Model.Product;
+import io.turntabl.tsmds.Services.MarketDataService;
+import io.turntabl.tsmds.Model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestOperations;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
@@ -19,9 +18,8 @@ public class MarketDataController {
     @Autowired
     RestTemplate restTemplate;
 
-
     //TODO
-    //Subscribe for market Data Automaticallly
+    //Subscribe for market Data Automatically
 //    @PostConstruct
 //    public void subscribeForMarketData() throws UnknownHostException {
 ////        restTemplate.postForObject()
