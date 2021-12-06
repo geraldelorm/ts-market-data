@@ -2,6 +2,7 @@ package io.turntabl.tsmds.Controller;
 
 import io.turntabl.tsmds.Services.MarketDataService;
 import io.turntabl.tsmds.Model.Product;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -20,26 +21,7 @@ public class MarketDataController {
 
     //TODO
     //Subscribe for market Data Automatically
-//    @PostConstruct
-//    public void subscribeForMarketData() throws UnknownHostException {
-////        restTemplate.postForObject()
-//      String webhookUrl1 = "https://" +  InetAddress.getLocalHost().getHostAddress() + "/webhook/md";
-//      String webhookUrl2 = "https://" +  InetAddress.getLocalHost().getHostAddress() + "/webhook/md2";
-//    }
-//
-//    @GetMapping
-//    public String printHost() throws UnknownHostException {
-//        String webhookUrl1 = "https://" +  InetAddress.getLocalHost().getHostAddress() + "/webhook/md";
-//        String webhookUrl2 = "https://" +  InetAddress.getLocalHost().getHostAddress() + "/webhook/md2";
-//
-//        return webhookUrl1 + " and " + webhookUrl2;
-//    }
-//    @GetMapping("/webhook/md")
-//    public String demo(@RequestBody List<MarketData> marketDataFromExchange) {
-//        return "Data from exchange1 sent";
-//    }
 
-    // Sending initial MarketData
     @PostConstruct
     public void sendInitialData() {
         ArrayList initialMarketDataFromExchange1 = restTemplate.getForObject("https://exchange.matraining.com/md", ArrayList.class);
