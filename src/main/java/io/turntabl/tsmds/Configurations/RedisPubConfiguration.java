@@ -1,7 +1,6 @@
 package io.turntabl.tsmds.Configurations;
 
 import io.turntabl.tsmds.Model.Product;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -45,4 +44,3 @@ public class RedisPubConfiguration {
         return template;
     }
 }
-

@@ -2,13 +2,11 @@ package io.turntabl.tsmds.Controller;
 
 import io.turntabl.tsmds.Services.MarketDataService;
 import io.turntabl.tsmds.Model.Product;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
