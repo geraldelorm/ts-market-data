@@ -9,6 +9,7 @@ import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -24,11 +25,16 @@ public class MarketDataController {
 
     @PostConstruct
     public void sendInitialData() {
-        ArrayList initialMarketDataFromExchange1 = restTemplate.getForObject("https://exchange.matraining.com/md", ArrayList.class);
-        ArrayList initialMarketDataFromExchange2 = restTemplate.getForObject("https://exchange2.matraining.com/md", ArrayList.class);
+        Product[] initialMarketDataFromExchange1 = restTemplate.getForObject("https://exchange.matraining.com/md", Product[].class);
+        Product[] initialMarketDataFromExchange2 = restTemplate.getForObject("https://exchange2.matraining.com/md", Product[].class);
 
-        marketDataService.sendMessageFromExchangeOne(initialMarketDataFromExchange1);
-        marketDataService.sendMessageFromExchangeTwo(initialMarketDataFromExchange2);
+        if (initialMarketDataFromExchange1 != null) {
+            marketDataService.sendMessageFromExchangeOne(Arrays.asList(initialMarketDataFromExchange1));
+        }
+
+        if (initialMarketDataFromExchange2 != null) {
+            marketDataService.sendMessageFromExchangeTwo(Arrays.asList(initialMarketDataFromExchange2));
+        }
     }
 
     @PostMapping("/webhook/md")
