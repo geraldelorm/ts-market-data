@@ -38,7 +38,7 @@ public class RedisPubConfiguration {
     }
 
     @Bean
-    public RedisTemplate redisTemplate() {
+    public RedisTemplate<String, Product> redisTemplate() {
         RedisTemplate<String, Product> template = new RedisTemplate<>();
         template.setConnectionFactory(jedisConnectionFactory());
         template.setDefaultSerializer(new Jackson2JsonRedisSerializer<Product>(Product.class));

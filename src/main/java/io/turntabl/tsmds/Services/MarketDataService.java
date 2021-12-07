@@ -15,7 +15,7 @@ import java.util.List;
 public class MarketDataService {
 
     @Autowired
-    private RedisTemplate redisTemplate;
+    private RedisTemplate<String, Product> redisTemplate;
 
     @Autowired
     @Qualifier("marketDataFromExOne")
