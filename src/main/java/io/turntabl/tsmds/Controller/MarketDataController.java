@@ -13,10 +13,10 @@ import java.util.List;
 @RestController
 public class MarketDataController {
     @Autowired
-    MarketDataService marketDataService;
+    private MarketDataService marketDataService;
 
     @Autowired
-    RestTemplate restTemplate;
+    private RestTemplate restTemplate;
 
     //TODO
     //Subscribe for market Data Automatically
